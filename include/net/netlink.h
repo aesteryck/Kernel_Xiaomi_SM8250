@@ -173,7 +173,6 @@ enum {
 	NLA_MSECS,
 	NLA_NESTED,
 	NLA_NESTED_ARRAY,
-	NLA_NESTED_COMPAT,
 	NLA_NUL_STRING,
 	NLA_BINARY,
 	NLA_S8,
@@ -217,7 +216,8 @@ struct netlink_range_validation_signed {
  *                         nested header (or empty); len field is used if
  *                         validation_data is also used, for the max attr
  *                         number in the nested policy.
- *    NLA_NESTED_COMPAT    Minimum length of structure payload
+ *    NLA_NESTED           Don't use `len' field -- length verification is
+ *                         done by checking len of nested header (or empty)
  *    NLA_U8, NLA_U16,
  *    NLA_U32, NLA_U64,
  *    NLA_S8, NLA_S16,
