@@ -803,9 +803,9 @@ DEFINE_EVENT(wiphy_netdev_mac_evt, rdev_set_wds_peer,
 );
 
 TRACE_EVENT(rdev_dump_station,
-	TP_PROTO(struct wiphy *wiphy, struct net_device *netdev, int idx,
+	TP_PROTO(struct wiphy *wiphy, struct net_device *netdev, int _idx,
 		 u8 *mac),
-	TP_ARGS(wiphy, netdev, idx, mac),
+	TP_ARGS(wiphy, netdev, _idx, mac),
 	TP_STRUCT__entry(
 		WIPHY_ENTRY
 		NETDEV_ENTRY
@@ -816,7 +816,7 @@ TRACE_EVENT(rdev_dump_station,
 		WIPHY_ASSIGN;
 		NETDEV_ASSIGN;
 		MAC_ASSIGN(sta_mac, mac);
-		__entry->idx = idx;
+		__entry->idx = _idx;
 	),
 	TP_printk(WIPHY_PR_FMT ", " NETDEV_PR_FMT ", station mac: " MAC_PR_FMT ", idx: %d",
 		  WIPHY_PR_ARG, NETDEV_PR_ARG, MAC_PR_ARG(sta_mac),
@@ -880,9 +880,9 @@ DEFINE_EVENT(mpath_evt, rdev_get_mpath,
 );
 
 TRACE_EVENT(rdev_dump_mpath,
-	TP_PROTO(struct wiphy *wiphy, struct net_device *netdev, int idx,
+	TP_PROTO(struct wiphy *wiphy, struct net_device *netdev, int _idx,
 		 u8 *dst, u8 *next_hop),
-	TP_ARGS(wiphy, netdev, idx, dst, next_hop),
+	TP_ARGS(wiphy, netdev, _idx, dst, next_hop),
 	TP_STRUCT__entry(
 		WIPHY_ENTRY
 		NETDEV_ENTRY
@@ -895,7 +895,7 @@ TRACE_EVENT(rdev_dump_mpath,
 		NETDEV_ASSIGN;
 		MAC_ASSIGN(dst, dst);
 		MAC_ASSIGN(next_hop, next_hop);
-		__entry->idx = idx;
+		__entry->idx = _idx;
 	),
 	TP_printk(WIPHY_PR_FMT ", " NETDEV_PR_FMT ", index: %d, destination: "
 		  MAC_PR_FMT ", next hop: " MAC_PR_FMT,
@@ -925,9 +925,9 @@ TRACE_EVENT(rdev_get_mpp,
 );
 
 TRACE_EVENT(rdev_dump_mpp,
-	TP_PROTO(struct wiphy *wiphy, struct net_device *netdev, int idx,
+	TP_PROTO(struct wiphy *wiphy, struct net_device *netdev, int _idx,
 		 u8 *dst, u8 *mpp),
-	TP_ARGS(wiphy, netdev, idx, mpp, dst),
+	TP_ARGS(wiphy, netdev, _idx, mpp, dst),
 	TP_STRUCT__entry(
 		WIPHY_ENTRY
 		NETDEV_ENTRY
@@ -940,7 +940,7 @@ TRACE_EVENT(rdev_dump_mpp,
 		NETDEV_ASSIGN;
 		MAC_ASSIGN(dst, dst);
 		MAC_ASSIGN(mpp, mpp);
-		__entry->idx = idx;
+		__entry->idx = _idx;
 	),
 	TP_printk(WIPHY_PR_FMT ", " NETDEV_PR_FMT ", index: %d, destination: "
 		  MAC_PR_FMT ", mpp: " MAC_PR_FMT,
@@ -1706,8 +1706,8 @@ TRACE_EVENT(rdev_tdls_mgmt,
 );
 
 TRACE_EVENT(rdev_dump_survey,
-	TP_PROTO(struct wiphy *wiphy, struct net_device *netdev, int idx),
-	TP_ARGS(wiphy, netdev, idx),
+	TP_PROTO(struct wiphy *wiphy, struct net_device *netdev, int _idx),
+	TP_ARGS(wiphy, netdev, _idx),
 	TP_STRUCT__entry(
 		WIPHY_ENTRY
 		NETDEV_ENTRY
@@ -1716,7 +1716,7 @@ TRACE_EVENT(rdev_dump_survey,
 	TP_fast_assign(
 		WIPHY_ASSIGN;
 		NETDEV_ASSIGN;
-		__entry->idx = idx;
+		__entry->idx = _idx;
 	),
 	TP_printk(WIPHY_PR_FMT ", " NETDEV_PR_FMT ", index: %d",
 		  WIPHY_PR_ARG, NETDEV_PR_ARG, __entry->idx)
