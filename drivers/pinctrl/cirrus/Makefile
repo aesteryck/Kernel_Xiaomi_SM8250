@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-2.0-only
 # Cirrus Logic pinctrl drivers
 pinctrl-madera-objs		:= pinctrl-madera-core.o
 ifeq ($(CONFIG_PINCTRL_CS47L35),y)

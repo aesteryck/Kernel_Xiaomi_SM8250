@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-2.0-only
 # This is all selected by the Madera MFD driver Kconfig options
 config PINCTRL_MADERA
 	tristate

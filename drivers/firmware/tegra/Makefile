@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-2.0-only
 tegra-bpmp-y			= bpmp.o
 tegra-bpmp-$(CONFIG_DEBUG_FS)	+= bpmp-debugfs.o
 obj-$(CONFIG_TEGRA_BPMP)	+= tegra-bpmp.o

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-2.0-only
 obj-$(CONFIG_MT76x0U)    += mt76x0.o
 
 mt76x0-objs	= \

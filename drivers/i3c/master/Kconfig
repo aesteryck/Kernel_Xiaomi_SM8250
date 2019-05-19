@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-2.0-only
 config I3C_MASTER_QCOM_GENI
 	tristate "Qualcomm Technologies Inc.'s GENI based I3C controller"
 	depends on ARCH_QCOM

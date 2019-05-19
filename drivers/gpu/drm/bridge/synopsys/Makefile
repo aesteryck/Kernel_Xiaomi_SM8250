@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-2.0-only
 #ccflags-y := -I $(srctree)/include/drm
 
 obj-$(CONFIG_DRM_DW_HDMI) += dw-hdmi.o
