@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0-only
 /*
  * Thunderbolt Cactus Ridge driver - NHI driver
  *
