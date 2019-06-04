@@ -1,12 +1,14 @@
+// SPDX-License-Identifier: GPL-2.0-only
 /*
  *  linux/arch/arm/plat-versatile/platsmp.c
  *
  *  Copyright (C) 2002 ARM Ltd.
  *  All Rights Reserved
  *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 2 as
- * published by the Free Software Foundation.
+ * This code is specific to the hardware found on ARM Realview and
+ * Versatile Express platforms where the CPUs are unable to be individually
+ * woken, and where there is no way to hot-unplug CPUs.  Real platforms
+ * should not copy this code.
  */
 #include <linux/init.h>
 #include <linux/errno.h>

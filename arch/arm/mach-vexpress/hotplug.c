@@ -1,12 +1,14 @@
+// SPDX-License-Identifier: GPL-2.0-only
 /*
  *  linux/arch/arm/mach-realview/hotplug.c
  *
  *  Copyright (C) 2002 ARM Ltd.
  *  All Rights Reserved
  *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 2 as
- * published by the Free Software Foundation.
+ * This hotplug implementation is _specific_ to the situation found on
+ * ARM development platforms where there is _no_ possibility of actually
+ * taking a CPU offline, resetting it, or otherwise.  Real platforms must
+ * NOT copy this code.
  */
 #include <linux/kernel.h>
 #include <linux/errno.h>
