@@ -760,12 +760,6 @@ int ieee80211_key_link(struct ieee80211_key *key,
 	key->sdata = sdata;
 	key->sta = sta;
 
-	/*
-	 * Assign a unique ID to every key so we can easily prevent mixed
-	 * key and fragment cache attacks.
-	 */
-	key->color = atomic_inc_return(&key_color);
-
 	increment_tailroom_need_count(sdata);
 
 	ret = ieee80211_key_replace(sdata, sta, pairwise, old_key, key);
